@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Apex Horizon | Premium Exotic Hypercars</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600&family=Syncopate:wght@700&display=swap" rel="stylesheet">
+    
+    <style>
+        /* Custom Design Architecture & Token Maps */
+        :root {
+            --obsidian: #0A0A0A;
+            --matte-gray: #1F1F1F;
+            --neon-blue: #00E5FF;
+            --pure-white: #FFFFFF;
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background-color: var(--obsidian);
+            color: var(--pure-white);
+        }
+
+        .heading-automotive {
+            font-family: 'Syncopate', sans-serif;
+            letter-spacing: 0.08em;
+        }
+
+        /* Reset and hide native cursor globally on desktop setups */
+        @media (hover: hover) and (pointer: fine) {
+            body, a, button, input, select, textarea, .interactive-target {
+                cursor: none !important;
+            }
+            .custom-cursor-system {
+                display: block;
+            }
+        }
+
+        /* -------------------------------------------------------------
+           CRITICAL FEATURE: Advanced Interactive Performance Cursor 
+        ------------------------------------------------------------- */
+        .custom-cursor-system {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 99999;
+        }
+
+        /* Precise instant center dot */
+        #cursor-dot {
+            position: fixed;
+            width: 5px;
+            height: 5px;
+            background-color: var(--pure-white);
+            border-radius: 50%;
+            transform: translate(-50%, -50%);
+            pointer-events: none;
+            transition: background-color 0.25s ease, transform 0.25s ease;
+        }
+
+        /* Fluid momentum lag ring (Speedometer / Dial aesthetic) */
+        #cursor-ring {
+            position: fixed;
+            width: 36px;
+            height: 36px;
+            border: 1px solid rgba(255, 255, 255, 0.25);
+            border-radius: 50%;
+            transform: translate(-50%, -50%);
+            pointer-events: none;
+            transition: width 0.3s cubic-bezier(0.16, 1, 0.3, 1), 
+                        height 0.3s cubic-bezier(0.16, 1, 0.3, 1), 
+                        border-color 0.3s ease, 
+                        background-color 0.3s ease,
+                        border-radius 0.3s ease;
+        }
+
+        /* Hover Transformation States */
+        .custom-cursor-system.is-hovering #cursor-dot {
+            background-color: var(--neon-blue);
+            transform: translate(-50%, -50%) scale(1.5);
+        }
+
+        .custom-cursor-system.is-hovering #cursor-ring {
+            width: 52px;
+            height: 52px;
+            border-color: var(--neon-blue);
+            border-radius: 4px; /* Morph ring into a sleek technical crosshair bracket */
+            background-color: rgba(0, 229, 255, 0.03);
+        }
+
+        /* Custom Animated Border for Nav CTA Button */
+        .animated-border-btn {
+            position: relative;
+            background: transparent;
+            overflow: hidden;
+        }
+        .animated-border-btn::before {
+            content: '';
+            position: absolute;
+            bottom: 0; left: 0; width: 100%; height: 1px;
+            background: linear-gradient(90deg, transparent, var(--neon-blue), transparent);
+            transform: scaleX(0);
+            transition: transform 0.4s ease;
+        }
+        .animated-border-btn:hover::before {
+            transform: scaleX(1);
+        }
+    </style>
+</head>
+<body class="antialiased overflow-x-hidden bg-[#0A0A0A]">
+
+    <div class="custom-cursor-system">
+        <div id="cursor-ring"></div>
+        <div id="cursor-dot"></div>
+    </div>
+
+    <nav class="fixed top-0 left-0 w-full z-50 bg-[#0A0A0A]/60 backdrop-blur-xl border-b border-white/5 px-6 py-5 md:px-16 transition-all">
+        <div class="max-w-7xl mx-auto flex items-center justify-between">
+            <a href="#" class="heading-automotive text-sm md:text-base font-bold tracking-[0.25em] text-white interactive-target">
+                APEX<span class="text-[#00E5FF]">.</span>HORIZON
+            </a>
+            
+            <div class="hidden md:flex items-center space-x-12 text-[11px] font-medium tracking-[0.2em] uppercase text-white/60">
+                <a href="#fleet" class="hover:text-white transition-colors duration-300 interactive-target">Inventory</a>
+                <a href="#bespoke" class="hover:text-white transition-colors duration-300 interactive-target">Bespoke Studio</a>
+                <a href="#" class="hover:text-white transition-colors duration-300 interactive-target">Heritage</a>
+                <a href="#footer" class="hover:text-white transition-colors duration-300 interactive-target">Contact</a>
+            </div>
+
+            <div>
+                <a href="#footer" class="animated-border-btn border border-white/10 text-[10px] font-semibold uppercase tracking-[0.2em] px-6 py-3 text-white transition-all hover:bg-white/5 inline-block interactive-target">
+                    Book Private Viewing
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <section class="relative min-h-screen flex items-center bg-[#0A0A0A] overflow-hidden pt-20">
+        <div class="absolute inset-0 z-0 opacity-45 mix-blend-lighten pointer-events-none">
+            <div class="absolute inset-0 bg-gradient-to-r from-[#0A0A0A] via-transparent to-[#0A0A0A]/40 z-10"></div>
+            <div class="absolute inset-0 bg-gradient-to-t from-[#0A0A0A] via-transparent to-transparent z-10"></div>
+            <img src="https://images.unsplash.com/photo-1614162692292-7ac56d7f7f1e?q=80&w=2070&auto=format&fit=crop" alt="Hypercar Showroom Asset" class="w-full h-full object-cover">
+        </div>
+
+        <div class="w-full max-w-7xl mx-auto px-6 md:px-16 z-10 relative mt-12">
+            <span class="text-[#00E5FF] text-xs font-semibold uppercase tracking-[0.3em] mb-4 block">Curators of Fine Velocity</span>
+            <h1 class="heading-automotive text-4xl sm:text-5xl lg:text-7xl font-bold text-white uppercase leading-[1.1] max-w-4xl mb-8">
+                Engineering Emotion.<br>Defining <span class="text-transparent bg-clip-text bg-gradient-to-r from-white to-white/30">Legacy.</span>
+            </h1>
+            <p class="text-sm md:text-base text-white/50 max-w-xl font-light leading-relaxed mb-12">
+                An elite collection of rare mechanical masterpieces, exotic commissions, and limited-run hypercars tailored precisely for the uncompromising collector.
+            </p>
+            
+            <div class="flex flex-col sm:flex-row gap-5">
+                <a href="#fleet" class="bg-white text-[#0A0A0A] text-xs font-semibold uppercase tracking-[0.2em] px-9 py-5 text-center hover:bg-[#00E5FF] hover:text-black transition-all duration-400 interactive-target">
+                    View Collection
+                </a>
+                <a href="#bespoke" class="border border-white/20 text-white text-xs font-semibold uppercase tracking-[0.2em] px-9 py-5 text-center hover:border-white hover:bg-white/5 transition-all duration-400 interactive-target">
+                    Configure Yours
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <section id="fleet" class="py-32 px-6 md:px-16 bg-[#0F0F0F] border-y border-white/5">
+        <div class="max-w-7xl mx-auto">
+            <div class="flex flex-col md:flex-row md:items-end justify-between mb-20">
+                <div>
+                    <span class="text-[#00E5FF] text-xs font-semibold uppercase tracking-[0.3em] mb-3 block">Available Configurations</span>
+                    <h2 class="heading-automotive text-2xl md:text-4xl uppercase text-white">The Active Fleet</h2>
+                </div>
+                <div class="mt-4 md:mt-0">
+                    <a href="#" class="text-xs font-semibold tracking-[0.2em] uppercase text-white/70 hover:text-[#00E5FF] transition-colors inline-flex items-center gap-3 group border-b border-white/10 pb-2 interactive-target">
+                        Full Digital Showroom
+                        <span class="group-hover:translate-x-1 transition-transform">→</span>
+                    </a>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="bg-[#0A0A0A] border border-white/5 group overflow-hidden transition-all duration-500 hover:border-white/20">
+                    <div class="overflow-hidden aspect-[16/10] relative">
+                        <img src="https://images.unsplash.com/photo-1618843479313-40f8afb4b4d8?q=80&w=600&auto=format&fit=crop" alt="Hypercar Spec" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 opacity-80 group-hover:opacity-100">
+                    </div>
+                    <div class="p-8">
+                        <div class="flex justify-between items-baseline mb-4">
+                            <h3 class="heading-automotive text-sm font-bold tracking-wider text-white">Aero-Vitesse V12</h3>
+                            <span class="text-[11px] uppercase text-[#00E5FF] tracking-widest font-mono">Hypercar</span>
+                        </div>
+                        <hr class="border-white/5 mb-6">
+                        <div class="grid grid-cols-2 gap-4 mb-8 text-left">
+                            <div>
+                                <span class="text-[10px] text-white/40 uppercase block tracking-wider mb-0.5">Power</span>
+                                <span class="font-light text-sm tracking-wide text-white">1,150 HP</span>
+                            </div>
+                            <div>
+                                <span class="text-[10px] text-white/40 uppercase block tracking-wider mb-0.5">0-60 MPH</span>
+                                <span class="font-light text-sm tracking-wide text-white">1.97 Sec</span>
+                            </div>
+                        </div>
+                        <a href="#" class="text-[10px] font-bold tracking-[0.25em] uppercase text-white group-hover:text-[#00E5FF] transition-colors inline-block interactive-target">
+                            Explore Allocation Details →
+                        </a>
+                    </div>
+                </div>
+
+                <div class="bg-[#0A0A0A] border border-white/5 group overflow-hidden transition-all duration-500 hover:border-white/20">
+                    <div class="overflow-hidden aspect-[16/10] relative">
+                        <img src="https://images.unsplash.com/photo-1503376780353-7e6692767b70?q=80&w=600&auto=format&fit=crop" alt="GT Luxury Spec" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 opacity-80 group-hover:opacity-100">
+                    </div>
+                    <div class="p-8">
+                        <div class="flex justify-between items-baseline mb-4">
+                            <h3 class="heading-automotive text-sm font-bold tracking-wider text-white">Chronos GT</h3>
+                            <span class="text-[11px] uppercase text-[#00E5FF] tracking-widest font-mono">Grand Tourer</span>
+                        </div>
+                        <hr class="border-white/5 mb-6">
+                        <div class="grid grid-cols-2 gap-4 mb-8 text-left">
+                            <div>
+                                <span class="text-[10px] text-white/40 uppercase block tracking-wider mb-0.5">Power</span>
+                                <span class="font-light text-sm tracking-wide text-white">820 HP</span>
+                            </div>
+                            <div>
+                                <span class="text-[10px] text-white/40 uppercase block tracking-wider mb-0.5">0-60 MPH</span>
+                                <span class="font-light text-sm tracking-wide text-white">2.8 Sec</span>
+                            </div>
+                        </div>
+                        <a href="#" class="text-[10px] font-bold tracking-[0.25em] uppercase text-white group-hover:text-[#00E5FF] transition-colors inline-block interactive-target">
+                            Explore Allocation Details →
+                        </a>
+                    </div>
+                </div>
+
+                <div class="bg-[#0A0A0A] border border-white/5 group overflow-hidden transition-all duration-500 hover:border-white/20">
+                    <div class="overflow-hidden aspect-[16/10] relative">
+                        <img src="https://images.unsplash.com/photo-1563720223185-11003d516935?q=80&w=600&auto=format&fit=crop" alt="Track Special Spec" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 opacity-80 group-hover:opacity-100">
+                    </div>
+                    <div class="p-8">
+                        <div class="flex justify-between items-baseline mb-4">
+                            <h3 class="heading-automotive text-sm font-bold tracking-wider text-white">Stratos Monoposto</h3>
+                            <span class="text-[11px] uppercase text-[#00E5FF] tracking-widest font-mono">Track Only</span>
+                        </div>
+                        <hr class="border-white/5 mb-6">
+                        <div class="grid grid-cols-2 gap-4 mb-8 text-left">
+                            <div>
+                                <span class="text-[10px] text-white/40 uppercase block tracking-wider mb-0.5">Power</span>
+                                <span class="font-light text-sm tracking-wide text-white">980 HP</span>
+                            </div>
+                            <div>
+                                <span class="text-[10px] text-white/40 uppercase block tracking-wider mb-0.5">0-60 MPH</span>
+                                <span class="font-light text-sm tracking-wide text-white">2.2 Sec</span>
+                            </div>
+                        </div>
+                        <a href="#" class="text-[10px] font-bold tracking-[0.25em] uppercase text-white group-hover:text-[#00E5FF] transition-colors inline-block interactive-target">
+                            Explore Allocation Details →
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="bespoke" class="bg-[#0A0A0A] min-h-[600px] flex flex-col lg:flex-row items-stretch">
+        <div class="w-full lg:w-1/2 flex flex-col justify-center p-8 md:p-20 lg:p-28">
+            <span class="text-[#00E5FF] text-xs font-semibold uppercase tracking-[0.3em] mb-4 block">Bespoke Atelier</span>
+            <h2 class="heading-automotive text-2xl md:text-4xl text-white uppercase leading-snug mb-6">
+                Tailoring Beyond<br>Limits
+            </h2>
+            <p class="text-sm text-white/50 font-light leading-relaxed mb-10 max-w-md">
+                Every vehicle curated by Apex Horizon can be modified inside our internal design studio. Select individual pre-preg carbon weave matrices, magnesium wheel dynamics, and custom aniline upholstery variations.
+            </p>
+            <div>
+                <a href="#" class="inline-block border-b border-[#00E5FF] text-[11px] font-bold tracking-[0.25em] uppercase text-white pb-2 hover:text-[#00E5FF] transition-colors interactive-target">
+                    Enter Customization Suite →
+                </a>
+            </div>
+        </div>
+        
+        <div class="w-full lg:w-1/2 relative min-h-[350px] lg:min-h-0 bg-[#1F1F1F]">
+            <img src="https://images.unsplash.com/photo-1549399542-7e3f8b79c341?q=80&w=1200&auto=format&fit=crop" alt="Luxury Carbon Interior Details" class="absolute inset-0 w-full h-full object-cover opacity-60">
+            <div class="absolute inset-0 bg-gradient-to-t lg:bg-gradient-to-r from-[#0A0A0A] via-transparent to-transparent pointer-events-none"></div>
+        </div>
+    </section>
+
+    <footer id="footer" class="bg-[#050505] text-white/50 pt-24 pb-12 px-6 md:px-16 border-t border-white/5">
+        <div class="max-w-7xl mx-auto">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 pb-20 border-b border-white/5">
+                
+                <div class="lg:col-span-4">
+                    <h3 class="heading-automotive text-sm font-bold text-white tracking-widest mb-6">APEX HORIZON</h3>
+                    <p class="text-xs leading-relaxed max-w-sm mb-6">
+                        An architectural showroom environment focused exclusively on elite global automotive acquisition.
+                    </p>
+                    <p class="text-xs text-white/80 font-mono tracking-wider">
+                        Private Concierge: +1 (800) 555-APEX
+                    </p>
+                </div>
+
+                <div class="lg:col-span-3 lg:col-start-6">
+                    <h4 class="text-[10px] font-bold uppercase tracking-[0.2em] text-white mb-6">Showroom Inquiries</h4>
+                    <ul class="space-y-4 text-xs font-light">
+                        <li><a href="#" class="hover:text-[#00E5FF] transition-colors interactive-target">Private Operations</a></li>
+                        <li><a href="#" class="hover:text-[#00E5FF] transition-colors interactive-target">Track Facilities</a></li>
+                        <li><a href="#" class="hover:text-[#00E5FF] transition-colors interactive-target">Armored Commissions</a></li>
+                    </ul>
+                </div>
+
+                <div class="lg:col-span-4">
+                    <h4 class="text-[10px] font-bold uppercase tracking-[0.2em] text-white mb-6">Exclusive Releases</h4>
+                    <p class="text-xs mb-4">Register your digital credentials to receive notice on off-market vehicle arrivals.</p>
+                    <form class="flex border-b border-white/20 focus-within:border-[#00E5FF] transition-colors py-1">
+                        <input type="email" placeholder="Enter security email" class="bg-transparent text-white placeholder-white/20 px-2 py-2 text-xs outline-none flex-grow tracking-widest font-mono interactive-target">
+                        <button type="submit" class="text-[10px] font-bold uppercase tracking-widest text-white hover:text-[#00E5FF] px-4 transition-colors interactive-target">
+                            Request
+                        </button>
+                    </form>
+                </div>
+            </div>
+
+            <div class="pt-8 flex flex-col sm:flex-row justify-between items-center text-[10px] tracking-wider text-white/30 space-y-4 sm:space-y-0">
+                <p>&copy; 2026 Apex Horizon Logistics. Engineered securely.</p>
+                <div class="flex space-x-8">
+                    <a href="#" class="hover:text-white transition-colors interactive-target">NDA Framework</a>
+                    <a href="#" class="hover:text-white transition-colors interactive-target">Terms of Procurement</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+
+    <script>
+        // System element mapping
+        const cursorSystem = document.querySelector('.custom-cursor-system');
+        const cursorDot = document.getElementById('cursor-dot');
+        const cursorRing = document.getElementById('cursor-ring');
+
+        // Physics variables for smooth lag engine interpolation
+        let mouseX = 0, mouseY = 0;   // Precise user tracking metrics
+        let ringX = 0, ringY = 0;     // Lazy element coordinates
+        
+        // Speed dampener factor (Lower value means smoother, luxury fluid lag physics)
+        const lagDampener = 0.12;
+
+        window.addEventListener('mousemove', (event) => {
+            mouseX = event.clientX;
+            mouseY = event.clientY;
+
+            // Immediately map the central pointer point natively 
+            cursorDot.style.left = mouseX + 'px';
+            cursorDot.style.top = mouseY + 'px';
+        });
+
+        // Frame rendering cycle executing vanilla JS requestAnimationFrame loop
+        function processCursorPhysics() {
+            // Distance differential matrix
+            let differentialX = mouseX - ringX;
+            let differentialY = mouseY - ringY;
+
+            // Incrementally translate fractional steps toward actual cursor vector
+            ringX += differentialX * lagDampener;
+            ringY += differentialY * lagDampener;
+
+            // Render coordinates onto the lag ring layout
+            cursorRing.style.left = ringX + 'px';
+            cursorRing.style.top = ringY + 'px';
+
+            requestAnimationFrame(processCursorPhysics);
+        }
+        // Initiate framework loop
+        processCursorPhysics();
+
+        // Map interactive UI elements to toggle feedback transformations
+        const targetedInteractives = document.querySelectorAll('.interactive-target');
+
+        targetedInteractives.forEach(element => {
+            // Morph layout state configuration on hover arrival
+            element.addEventListener('mouseenter', () => {
+                cursorSystem.classList.add('is-hovering');
+            });
+            // Revert state configuration upon pointer retreat
+            element.addEventListener('mouseleave', () => {
+                cursorSystem.classList.remove('is-hovering');
+            });
+        });
+    </script>
+</body>
+</html>
